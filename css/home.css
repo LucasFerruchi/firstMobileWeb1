@@ -128,8 +128,8 @@ main {
         }
         .dia{
           font-size: 17px;
-          color: rgba(240, 240, 240, 0.807);
-          text-decoration: underline;
+          color: rgba(204, 220, 55, 0.807);
+          /* text-decoration: underline; */
         }
       }
     }
