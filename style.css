@@ -12,8 +12,13 @@
 /* Variables */
 :root {
   --font-principal: "Oswald", sans-serif, normal;
-  --font-tamaño-principal: 23px;
-  /* --font-tamaño-secundaria: ; */
+  --font-tamaño-principal: 25px;
+  --font-peso: 500;
+  --font-color: rgb(252, 239, 223);
+  --font-sombra: 1px 1px 2px black;
+  /* -------------------------------------- */
+  --color-primario: rgb(66, 66, 104);
+  --color-secundario: rgb(94, 94, 150);
 }
 
 /* Estilos generales */
@@ -21,6 +26,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,66 +37,158 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+/* HEADER */
 header {
   width: 100%;
-  height: auto;
-  background-color: rgb(177, 177, 177);
+
   nav {
     width: 100%;
+    height: 15vh;
+
+    background-color: rgb(53, 52, 52);
+    border-bottom: 3px solid rgb(14, 13, 13);
+    box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.5);
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 60% 40%;
     grid-auto-rows: auto;
     justify-items: center;
-    ul {
-      width: 100%;
-      font-family: var(--font-principal);
-      font-size: var(--font-tamaño-principal);
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      list-style: none;
-      li {
-        margin: 10px;
-      }
+    align-items: center;
+
+    /* .logoNav {
+      width: 38px;
+      height: 45px;
+      margin: 5px;
+      padding: 5px;
+      border: 5px solid rgb(66, 66, 104);
+      border-radius: 25px;
+      background-color: white;
+      box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.5);
+      color: rgb(94, 94, 150);
+      font-size: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    #logoNav {
+      margin-right: 10px;
+      justify-self: end;
+    }
+
+    #logInSport {
+      margin-right: 20px;
+      justify-self: end;
       a {
         text-decoration: none;
+        font-size: var(--font-tamaño-principal);
+        color: var(--color-secundario);
+        text-shadow: var(--font-sombra);
+      }
+    }
+
+    #optNav {
+      width: 100%;
+      grid-column: 1/3;
+    }
+
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      /* display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10%;
+      justify-content: center; */
+      li {
+        width: 100px;
+        list-style: none;
+        border-bottom: 3px solid var(--color-primario);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+
+      a {
+        text-decoration: none;
+        font-family: var(--font-principal);
+        font-size: var(--font-tamaño-principal);
+        font-weight: var(--font-peso);
+        text-shadow: var(--font-sombra);
+        color: var(--font-color);
+      }
+      a:hover {
+        color: var(--color-secundario);
       }
     }
   }
 }
-
-main {
-  width: 100%;
-  /* height: 50vh; */
-  background-color: rgb(247, 203, 203);
-  flex: 1;
-}
-
+/* FOOTER */
 footer {
   width: 100%;
-  height: 25vh;
+  height: 17vh;
   /* padding: 5px; */
-  background-color: rgb(177, 177, 177);
+  border-top: 3px solid rgb(14, 13, 13);
+  background-color: rgb(53, 52, 52);
   display: grid;
   grid-template-columns: 40% 60%;
+  align-items: center;
+
+  #contLogoFooter {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* p {
+      font-family: var(--font-principal);
+      font-size: var(--font-tamaño-principal);
+      font-weight: var(--font-peso);
+    } */
+  }
+
+  #rollingSport {
+    font-family: var(--font-principal);
+    font-size: var(--font-tamaño-principal);
+    font-weight: var(--font-peso);
+    color: var(--color-primario);
+    text-shadow: var(--font-sombra);
+  }
 
   h2 {
     font-family: var(--font-principal);
     font-size: var(--font-tamaño-principal);
+    font-weight: var(--font-peso);
+    color: var(--font-color);
+    text-shadow: var(--font-sombra);
   }
 
   #contactoFooter {
-    font-size: 14px;
-  }
+    #dirFooter {
+      margin: 13px 0px;
+      font-size: 14px;
+    }
 
-  #redesFooter {
-    ul {
-      margin-top: 5px;
-      list-style: none;
-      font-size: 30px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    p {
+      font-family: var(--font-principal);
+    }
+
+    #redesFooter {
+      ul {
+        list-style: none;
+        color: var(--font-color);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10%;
+      }
+      a {
+        font-size: 35px;
+        color: var(--font-color);
+        text-shadow: var(--font-sombra);
+      }
+      a:hover {
+        color: var(--color-secundario);
+      }
     }
   }
 
@@ -99,13 +197,43 @@ footer {
   }
 }
 
+.logoSport {
+  width: 38px;
+  height: 45px;
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid var(--color-primario);
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: 0 6px 4px -2px rgba(0, 0, 0, 0.5);
+  color: var(--color-secundario);
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+}
+.logoSport:hover {
+  width: 42px;
+  height: 49px;
+  font-size: 45px;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 480px) {
   header {
     nav {
-      .logoNav {
-        font-size: 50px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      #logoNav {
+        margin-right: 0px;
+      }
+
+      #logInSport {
+        a {
+          font-size: 50px;
+        }
       }
     }
   }
@@ -124,27 +252,54 @@ footer {
     display: inline-block !important;
     justify-content: center;
   }
+
+  .logoSport {
+    width: 58px;
+    height: 65px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 55px;
+  }
+  .logoSport:hover {
+    width: 62px;
+    height: 69px;
+    font-size: 65px;
+  }
 }
 
 /* @media only screen and (min-width: 768px) {
+ 
 } */
 
 @media only screen and (min-width: 1024px) {
-  header nav {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    .logoNav {
-      font-size: 30px;
+  header {
+    nav {
+      height: 17vh;
       display: flex;
-      justify-content: center;
-    }
-    ul {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      a {
-        font-size: 30px;
+      justify-content: space-around;
+
+      #logoNav {
+        order: 1;
+      }
+
+      #optNav {
+        width: 70%;
+        order: 2;
+        ul {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+      }
+
+      #logInSport {
+        order: 3;
       }
     }
   }
+  footer {
+    height: auto;
+  }
+
+ 
 }
