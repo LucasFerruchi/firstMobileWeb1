@@ -26,6 +26,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  /* Manejo de medidas margin, padding, width, height etc  */
   box-sizing: border-box;
 }
 
@@ -211,6 +212,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Manejo de medidas margin, padding, width, height etc  */
   box-sizing: content-box;
 }
 .logoSport:hover {
